@@ -13,6 +13,7 @@
 		1133270423706C5B00A6A518 /* MPersianCalender.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1133270223706C5B00A6A518 /* MPersianCalender.xcdatamodeld */; };
 		1133270623706C5B00A6A518 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1133270523706C5B00A6A518 /* Assets.xcassets */; };
 		1133270923706C5B00A6A518 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1133270723706C5B00A6A518 /* LaunchScreen.storyboard */; };
+		1133271223706D4000A6A518 /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1133271123706D4000A6A518 /* CollectionViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		1133270523706C5B00A6A518 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1133270823706C5B00A6A518 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1133270A23706C5B00A6A518 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1133271123706D4000A6A518 /* CollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +58,7 @@
 		113326FA23706C5B00A6A518 /* MPersianCalender */ = {
 			isa = PBXGroup;
 			children = (
+				1133271023706CC800A6A518 /* CalenderCollectionView */,
 				113326FB23706C5B00A6A518 /* AppDelegate.swift */,
 				113326FD23706C5B00A6A518 /* ViewController.swift */,
 				113326FF23706C5B00A6A518 /* Main.storyboard */,
@@ -65,6 +68,14 @@
 				1133270223706C5B00A6A518 /* MPersianCalender.xcdatamodeld */,
 			);
 			path = MPersianCalender;
+			sourceTree = "<group>";
+		};
+		1133271023706CC800A6A518 /* CalenderCollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				1133271123706D4000A6A518 /* CollectionViewController.swift */,
+			);
+			path = CalenderCollectionView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,6 +149,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1133271223706D4000A6A518 /* CollectionViewController.swift in Sources */,
 				113326FE23706C5B00A6A518 /* ViewController.swift in Sources */,
 				1133270423706C5B00A6A518 /* MPersianCalender.xcdatamodeld in Sources */,
 				113326FC23706C5B00A6A518 /* AppDelegate.swift in Sources */,
