@@ -2,7 +2,7 @@
 //  ViewController.swift
 //  MPersianCalender
 //
-//  Created by Mahdi on 11/4/19.
+//  Created by notron on 11/8/19.
 //  Copyright © 2019 Mahdi Moayeri. All rights reserved.
 //
 
@@ -12,9 +12,10 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+
+        // Do any additional setup after loading the view.
     }
 
 
-}
 
+}
