@@ -10,7 +10,9 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    fileprivate let reuseCell = "DayCollectionViewCell"
+    fileprivate let reuseCell   = "DayCollectionViewCell"
+    fileprivate let reuseHeader = "HeaderCollectionReusableView"
+    
     @IBOutlet weak var collectionView: UICollectionView!
     
     var calender : [[Date]] = []
@@ -19,16 +21,17 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         calender = CalenderHelper().getCalender(count: 365)
+       
         
-        collectionView.register(UINib(nibName: reuseCell, bundle: nil), forCellWithReuseIdentifier: reuseCell)
-        
-        let width = collectionView.frame.width / 7
+        let width = collectionView.frame.width / 8
         let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
-        layout.sectionInset = UIEdgeInsets(top: 20, left: 0, bottom: 10, right: 0)
+        layout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 10, right: 0)
         layout.itemSize = CGSize(width: width, height: width)
         layout.minimumInteritemSpacing = 0
         layout.minimumLineSpacing = 0
         collectionView.collectionViewLayout = layout
+        collectionView.register(UINib(nibName: reuseCell, bundle: nil), forCellWithReuseIdentifier: reuseCell)
+        collectionView.register(UINib(nibName: reuseHeader, bundle: nil), forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: reuseHeader)
         
         collectionView.dataSource = self
         collectionView.delegate   = self
@@ -56,13 +59,17 @@ extension ViewController: UICollectionViewDataSource, UICollectionViewDelegate, 
         cell.config(date: calender[indexPath.section][indexPath.row])
         return cell
     }
+        
+
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
+            return CGSize(width:collectionView.frame.size.width, height:30)
+    }
     
-    
-//
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-//
-//        let width = collectionView.frame.width / 8
-//        return CGSize (width: width, height: width)
-//    }
+    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        
+        let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: reuseHeader, for: indexPath) as! HeaderCollectionReusableView
+        header.config(date: calender[indexPath.section].first!)
+        return header
+    }
     
 }

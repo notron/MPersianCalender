@@ -32,6 +32,15 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+    <key>UIAppFonts</key>
+    <array>
+        <string>IRANSansMobile(FaNum).ttf</string>
+        <string>IRANSansMobile(FaNum)_Black.ttf</string>
+        <string>IRANSansMobile(FaNum)_UltraLight.ttf</string>
+        <string>IRANSansMobile(FaNum)_Bold.ttf</string>
+        <string>IRANSansMobile(FaNum)_Medium.ttf</string>
+        <string>IRANSansMobile(FaNum)_Light.ttf</string>
+    </array>
 	<key>UISupportedInterfaceOrientations~ipad</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
