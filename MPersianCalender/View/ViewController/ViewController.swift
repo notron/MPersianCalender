@@ -21,6 +21,15 @@ class ViewController: UIViewController {
         calender = CalenderHelper().getCalender(count: 365)
         
         collectionView.register(UINib(nibName: reuseCell, bundle: nil), forCellWithReuseIdentifier: reuseCell)
+        
+        let width = collectionView.frame.width / 7
+        let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
+        layout.sectionInset = UIEdgeInsets(top: 20, left: 0, bottom: 10, right: 0)
+        layout.itemSize = CGSize(width: width, height: width)
+        layout.minimumInteritemSpacing = 0
+        layout.minimumLineSpacing = 0
+        collectionView.collectionViewLayout = layout
+        
         collectionView.dataSource = self
         collectionView.delegate   = self
         
@@ -28,7 +37,7 @@ class ViewController: UIViewController {
 
 }
 
-extension ViewController: UICollectionViewDataSource, UICollectionViewDelegate {
+extension ViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         
@@ -44,9 +53,16 @@ extension ViewController: UICollectionViewDataSource, UICollectionViewDelegate {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseCell, for: indexPath) as! DayCollectionViewCell
         
-        cell.config(date: calender.first![indexPath.row])
+        cell.config(date: calender[indexPath.section][indexPath.row])
         return cell
     }
     
+    
+//
+//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+//
+//        let width = collectionView.frame.width / 8
+//        return CGSize (width: width, height: width)
+//    }
     
 }

@@ -19,12 +19,9 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="N2a-XE-3dh">
-                    <rect key="frame" x="0.0" y="44" width="414" height="414"/>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" semanticContentAttribute="forceRightToLeft" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="N2a-XE-3dh">
+                    <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                    <constraints>
-                        <constraint firstAttribute="width" secondItem="N2a-XE-3dh" secondAttribute="height" multiplier="1:1" id="Lf1-ny-Dg0"/>
-                    </constraints>
                     <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="rxA-4b-3ra">
                         <size key="itemSize" width="50" height="50"/>
                         <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -38,6 +35,7 @@
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="N2a-XE-3dh" secondAttribute="trailing" id="01Q-cs-eId"/>
                 <constraint firstItem="N2a-XE-3dh" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="D5U-g9-ybD"/>
                 <constraint firstItem="N2a-XE-3dh" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="X4F-2x-SsE"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="N2a-XE-3dh" secondAttribute="bottom" id="gse-oq-Y9l"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <point key="canvasLocation" x="139" y="109"/>
