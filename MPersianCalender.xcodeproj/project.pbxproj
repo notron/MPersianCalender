@@ -14,6 +14,9 @@
 		1133271223706D4000A6A518 /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1133271123706D4000A6A518 /* CollectionViewController.swift */; };
 		F26A19492375606A0039F9E3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F26A19472375606A0039F9E3 /* ViewController.swift */; };
 		F26A194A2375606A0039F9E3 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F26A19482375606A0039F9E3 /* ViewController.xib */; };
+		F26A194E23756AAF0039F9E3 /* CalenderHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F26A194D23756AAF0039F9E3 /* CalenderHelper.swift */; };
+		F26A1957237572F20039F9E3 /* DayCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F26A1955237572F20039F9E3 /* DayCollectionViewCell.swift */; };
+		F26A1958237572F20039F9E3 /* DayCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F26A1956237572F20039F9E3 /* DayCollectionViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +29,9 @@
 		1133271123706D4000A6A518 /* CollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
 		F26A19472375606A0039F9E3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		F26A19482375606A0039F9E3 /* ViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ViewController.xib; sourceTree = "<group>"; };
+		F26A194D23756AAF0039F9E3 /* CalenderHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalenderHelper.swift; sourceTree = "<group>"; };
+		F26A1955237572F20039F9E3 /* DayCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayCollectionViewCell.swift; sourceTree = "<group>"; };
+		F26A1956237572F20039F9E3 /* DayCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DayCollectionViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,7 +64,8 @@
 		113326FA23706C5B00A6A518 /* MPersianCalender */ = {
 			isa = PBXGroup;
 			children = (
-				F26A1942237560350039F9E3 /* ViewController */,
+				F26A194C23756A940039F9E3 /* Helper */,
+				F26A194B23756A7E0039F9E3 /* View */,
 				1133271023706CC800A6A518 /* CalenderCollectionView */,
 				113326FB23706C5B00A6A518 /* AppDelegate.swift */,
 				1133270523706C5B00A6A518 /* Assets.xcassets */,
@@ -82,8 +89,34 @@
 			children = (
 				F26A19472375606A0039F9E3 /* ViewController.swift */,
 				F26A19482375606A0039F9E3 /* ViewController.xib */,
+				F26A1954237572DA0039F9E3 /* cell */,
 			);
 			path = ViewController;
+			sourceTree = "<group>";
+		};
+		F26A194B23756A7E0039F9E3 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F26A1942237560350039F9E3 /* ViewController */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F26A194C23756A940039F9E3 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				F26A194D23756AAF0039F9E3 /* CalenderHelper.swift */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
+		F26A1954237572DA0039F9E3 /* cell */ = {
+			isa = PBXGroup;
+			children = (
+				F26A1955237572F20039F9E3 /* DayCollectionViewCell.swift */,
+				F26A1956237572F20039F9E3 /* DayCollectionViewCell.xib */,
+			);
+			path = cell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -147,6 +180,7 @@
 				1133270923706C5B00A6A518 /* LaunchScreen.storyboard in Resources */,
 				F26A194A2375606A0039F9E3 /* ViewController.xib in Resources */,
 				1133270623706C5B00A6A518 /* Assets.xcassets in Resources */,
+				F26A1958237572F20039F9E3 /* DayCollectionViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -158,9 +192,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				F26A19492375606A0039F9E3 /* ViewController.swift in Sources */,
+				F26A1957237572F20039F9E3 /* DayCollectionViewCell.swift in Sources */,
 				1133271223706D4000A6A518 /* CollectionViewController.swift in Sources */,
 				1133270423706C5B00A6A518 /* MPersianCalender.xcdatamodeld in Sources */,
 				113326FC23706C5B00A6A518 /* AppDelegate.swift in Sources */,
+				F26A194E23756AAF0039F9E3 /* CalenderHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
