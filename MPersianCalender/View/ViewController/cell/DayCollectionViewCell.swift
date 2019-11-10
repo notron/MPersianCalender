@@ -12,18 +12,14 @@ class DayCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var label: UILabel!
 
-    func config(date: Date) {
-
-        let formatter = DateFormatter()
-        formatter.calendar = Calendar(identifier: .persian)
-        formatter.dateFormat = "yyyy"
-        let year = formatter.string(from: date)
-        formatter.dateFormat = "MM"
-        let month = formatter.string(from: date)
-        formatter.dateFormat = "dd"
-        let day = formatter.string(from: date)
+    func config(date: MDate) {
         
-        label.text = day
+        if date.isActive {
+            label.isHidden = false
+            label.text = date.date.toIranDay
+        } else {
+            label.isHidden = true
+        }
     }
 
 }

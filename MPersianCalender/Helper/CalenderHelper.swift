@@ -10,39 +10,43 @@ import Foundation
 
 class CalenderHelper {
     
-    func getCalender(count: Int) -> [[Date]] {
+    func getCalender(count: Int) -> [[MDate]] {
         
-        var dates : [[Date]] = []
+        var dates : [[MDate]] = []
         
         let startDate    = Date()
         let calendar     = Calendar.current
         var offset       = DateComponents()
-        var currentMonth : [Date] = []
+        var currentMonth : [MDate] = []
         var monthIndex   : Int?
         
-        currentMonth.append(startDate)
+        
+        currentMonth.append(MDate(date: startDate))
         
         
         for i in 1..<count {
             offset.day = i
             let nextDay: Date = calendar.date(byAdding: offset, to: startDate)!
-            
-            let formatter = DateFormatter()
-            formatter.calendar = Calendar(identifier: .persian)
-            formatter.dateFormat = "MM"
-            let month = Int(formatter.string(from: nextDay))!
+            let month = Int(nextDay.toIranMonth)!
             
             if monthIndex == nil {
                 monthIndex = month
             }
             
             if month == monthIndex {
-                currentMonth.append(nextDay)
+                currentMonth.append(MDate(date: nextDay))
             } else {
                 dates.append(currentMonth)
                 currentMonth = []
-                currentMonth.append(nextDay)
                 monthIndex = month
+                
+                for _ in 0...nextDay.persianWeekIndex {
+                    let date = MDate(date: Date())
+                    date.isActive = false
+                    currentMonth.append(date)
+                }
+                
+                currentMonth.append(MDate(date: nextDay))
             }
         }
         

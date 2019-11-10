@@ -15,13 +15,13 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var collectionView: UICollectionView!
     
-    var calender : [[Date]] = []
+    var calender : [[MDate]] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         calender = CalenderHelper().getCalender(count: 365)
-       
+        
         
         let width = collectionView.frame.width / 8
         let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
@@ -68,7 +68,7 @@ extension ViewController: UICollectionViewDataSource, UICollectionViewDelegate, 
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         
         let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: reuseHeader, for: indexPath) as! HeaderCollectionReusableView
-        header.config(date: calender[indexPath.section].first!)
+        header.config(date: calender[indexPath.section].last!)
         return header
     }
     
